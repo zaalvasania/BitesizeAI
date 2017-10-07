@@ -1,0 +1,122 @@
+
+
+hr.hr{
+	width:100%;
+	background-color: #000000;
+	border: none;
+	height: 5px;
+	margin-top: ;
+}
+
+iframe.iframe{
+	border-width: 2px;
+	margin: 0px 10px;
+}
+
+div a.navigationA:hover{
+	color:grey;
+}
+
+div a.navigationA{
+	color: white;
+	text-decoration: none;
+}
+
+div h3.navigationA{
+	color:white;
+}
+
+.box{
+	float:left;
+	height:220px;
+	width:220px;
+	border: 5px solid #687D6D;
+	border-radius: 200px;
+	display:inline-block;
+	margin:15px 0 15px 0;
+}
+
+.navBar{
+	position:fixed;
+}
+
+.fill{
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+.fill img {
+    flex-shrink: 0;
+    margin: 35% 0 0 0;
+    max-width: 320px;
+    max-height: 320px;
+}
+
+.projectContainer{
+	margin-left: 11%;
+	width: 20%;
+}
+
+.projectBox{
+	position: relative;
+	height:0;
+	padding-bottom: 100%;
+	margin-top:20px;
+	border:3px solid #687D6D;
+	border-radius: 15px;
+}
+
+.backgroundImg{
+	position:relative;
+	  margin-left: 0px;
+  -webkit-transition: all .5s ease;
+     -moz-transition: all .5s ease;
+       -o-transition: all .5s ease;
+      -ms-transition: all .5s ease;
+          transition: all .5s ease;
+}
+
+.backgroundImg:hover{
+	-webkit-filter: blur(8px);
+    filter: blur(8px);
+}
+
+.img__description {
+  position: absolute;
+  margin:0;
+  color: #000;
+  margin-right: 0;
+  visibility: hidden;
+  opacity: 0;
+
+  /* transition effect. not necessary */
+  transition: opacity .2s, visibility .2s;
+}
+
+.projectBox:hover .img__description {
+  visibility: visible;
+  opacity: 1;
+}
+
+.projectBox:hover .backgroundImg{
+	-webkit-filter: blur(9px);
+    filter: blur(9px);
+}
+
+.projectBox div{
+   position: absolute; 
+   top: 0px; 
+   width: 100%; 
+}
+
+.textFont{
+	font-family: Dosis;
+	color:black;
+}
+
+div h2{
+	color:white;
+	width:100%;
+}
