@@ -1,7 +1,7 @@
 var cities = [];
 var path = [];
 var circleRad=10;
-var noOfCities = 25;
+var noOfCities = 12;
 var population,currentBest;
 var count = 0;
 
