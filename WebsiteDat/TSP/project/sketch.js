@@ -4,15 +4,40 @@ var circleRad=10;
 var noOfCities = 13;
 var population,currentBest;
 var count = 0;
+var run = true;
 
 function setup(){
-	createCanvas(500,500);
+	createCanvas(500,510);
+	reset();
+}
+
+function reset(){
 	background(255);
 	generateCityLocations();
 	drawEllipsesAndPaths();
 	var popMax = 20;
 	var mutRate = 0.05;
 	population = new Population(popMax,mutRate,cities);
+}
+
+function mouseClicked(){
+	currentBest = null;
+	count = 0;
+	cities = [];
+	path = [];
+	reset();
+}
+
+function keyPressed(){
+	if(keyCode == 32){
+		if(run){
+			run = false;
+			noLoop();
+		}else{
+			run = true;
+			loop();
+		}
+	}
 }
 
 function draw(){
@@ -26,8 +51,9 @@ function draw(){
 		}
 	}
 	drawEllipsesAndPaths();
-	text("Generation: "+population.generation+"   |", 250,500);
-	text("Maximum Fitness: "+floor(currentBest.realFitness()), 350, 500);
+	textSize(15);
+	text("Generation: "+population.generation,0,505);
+	text("Maximum Fitness: "+floor(currentBest.realFitness()), 325, 505);
 	population.naturalSelection();
 	population.generateNewPop();
 }
