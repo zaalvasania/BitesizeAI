@@ -1,7 +1,7 @@
 var cities = [];
 var path = [];
 var circleRad=10;
-var noOfCities = 12;
+var noOfCities = 13;
 var population,currentBest;
 var count = 0;
 
@@ -11,7 +11,7 @@ function setup(){
 	generateCityLocations();
 	drawEllipsesAndPaths();
 	var popMax = 20;
-	var mutRate = 0.02;
+	var mutRate = 0.05;
 	population = new Population(popMax,mutRate,cities);
 }
 
@@ -25,19 +25,11 @@ function draw(){
 			currentBest = genMaxFit;
 		}
 	}
-	if(currentBest!=currentBestTemp){
-		drawEllipsesAndPaths();
-	}
+	drawEllipsesAndPaths();
+	text("Generation: "+population.generation+"   |", 250,500);
+	text("Maximum Fitness: "+floor(currentBest.realFitness()), 350, 500);
 	population.naturalSelection();
 	population.generateNewPop();
-	console.log("Maximum Fitness: "+currentBest.realFitness());
-	console.log("Generation: "+population.generation);
-	if(currentBest == genMaxFit.fitness){
-		console.log("checkcheckheck");
-		count++;
-	}else{
-		count = 0;
-	}
 }
 
 function drawEllipsesAndPaths(){
@@ -46,7 +38,7 @@ function drawEllipsesAndPaths(){
 		ellipse(cities[i].x,cities[i].y,(circleRad*2),(circleRad*2));
 	}
 	if(currentBest!=null){
-		console.log(currentBest.path);
+		//console.log(currentBest.path);
 		for(var j=0;j<currentBest.path.length-1;j++){
 			line(cities[currentBest.path[j]].x,cities[currentBest.path[j]].y,cities[currentBest.path[j+1]].x,cities[currentBest.path[j+1]].y);
 		}
@@ -55,6 +47,6 @@ function drawEllipsesAndPaths(){
 
 function generateCityLocations(){
 	for(var i=0;i<noOfCities;i++){
-		cities.push(createVector(random(10,width-10),random(10,height-10)));
+		cities.push(createVector(random(10,width-10),random(10,500-10)));
 	}
 }

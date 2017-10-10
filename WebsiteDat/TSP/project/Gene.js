@@ -9,7 +9,6 @@ function Gene(cities,path){
 		var p;
 		//TO - DO: Implement the more efficient method
 		while(count<this.cities.length){
-			console.log(count);
 			p =floor(random(cities.length));
 			if(!this.addedAlr(p,path)){
 				path.push(p);
@@ -43,13 +42,12 @@ function Gene(cities,path){
 
 	this.getFitness = function(){
 		var totalDist = this.realFitness();
-		var fit = map(1/totalDist,0,0.1,1,10000);
-		//console.log("Inverse scaled fitness:"+fit);
-		//console.log("Scaled twice fitness:"+10*floor(fit));
-		this.fitness = floor(1000*fit);
+		var fit = map(1/totalDist,0,0.1,0,1000);
+		this.fitness = floor(10000*fit);
 	}
 
 	this.crossover = function(gene2){
+		
 		var length = floor(random(1,this.path.length/3));
 		var startingPoint = floor(random(0,this.path.length-(this.path.length/3)));
 		var pathNew = [];
@@ -74,6 +72,7 @@ function Gene(cities,path){
 			pathNew[g] = nextGene[q];
 			q++;
 		}
+		
 		return new Gene(cities,pathNew);
 	}
 
@@ -88,6 +87,7 @@ function Gene(cities,path){
 
 	//Swapping cities in list
 	this.mutate = function(mutateRate){
+		
 		for(var i=0;i<this.path.length;i++){
 			for(var k=0;k<this.path.length;k++){
 				
