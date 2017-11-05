@@ -1,6 +1,8 @@
 
 .iframe{
-  margin: 0 0 0 25%;
+  display:block;
+  margin: 0 auto;
+  margin-top: 10px;
 }
 
 div a.navigationA{

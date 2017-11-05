@@ -1,3 +1,13 @@
+.header{
+  font-family: Dosis; 
+  font-style: italic; 
+  font-weight: 50px; 
+  color:#000000; 
+  font-size: 370%; 
+  margin:0 auto;
+  margin-bottom: 10px;
+}
+
 div a.navigationA{
 	color: white;
 	text-decoration: none;
