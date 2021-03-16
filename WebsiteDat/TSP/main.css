@@ -8,6 +8,16 @@
   margin-bottom: 10px;
 }
 
+.subheader{
+  font-family: Dosis; 
+  font-style: italic; 
+  font-weight: 50px; 
+  color:#FF0000;
+  font-size: 150%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
 div a.navigationA{
 	color: white;
 	text-decoration: none;
